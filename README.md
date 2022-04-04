@@ -1,7 +1,6 @@
 # Google Cloud Cortex Framework Application Layer Deployment Guide
 
 Last update: Mar 29, 2022
-Contact: cortex-support@google.com
 
 ____  
 
@@ -119,7 +118,7 @@ done
 
 In case your reporting dataset is in the same project as the application layer this is what you will have at the end of steps 3-6:
 
-![](img/2022-03-29-17-03-47.png)
+![](img/readme_1.png)
 
 #### **7. Configure Pub/Sub to allow Cloud Run authentication ([learn more about integrating with pub/sub](https://cloud.google.com/run/docs/tutorials/pubsub#integrating-pubsub))**
 
@@ -172,9 +171,9 @@ EOF
 ```
 
 
-#### **11. Marketplace deployment**
+#### **11. [Marketplace deployment](https://console.cloud.google.com/marketplace/product/cortex-public/cloud-cortex-application-layer)**
 
-On the marketplace navigate to Cortex Application Layer deployment page.
+On the marketplace navigate to Cortex Application Layer [deployment page](https://console.cloud.google.com/marketplace/product/cortex-public/cloud-cortex-application-layer).
 Now we will use the information we populated above; this table illustrates what each variable represents.
 
 
@@ -192,15 +191,15 @@ Now we will use the information we populated above; this table illustrates what 
 
 This is what the deployment configuration page looks like:
 
-![](img/2022-03-29-17-11-56.png)
+![](img/readme_2.png)
 
 When deploying the application you should be automatically redirected to to the kubernetes applications page:
 
-![](img/2022-03-29-17-12-46.png)
+![](img/readme_4.png)
 
 Once deployed you should see the application listed in your kubernetes cluster under `Applications`:
 
-![](img/2022-03-29-17-13-45.png)
+![](img/readme_3.png)
 
 
 ## Deployed artifacts
@@ -249,8 +248,8 @@ To remove the application without removing the project do the following:
 
 1. [Clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) the sample code in the source repository provided and navigate to the terraform folder
 ```shell
-git clone <<repository name>>
-cd <<repository folder>>
+gcloud source repos clone cortex-sample-app --project="$PROJECT_ID"
+cd cortex-sample-app/src/terraform
 ```
 
 2. type `terraform init`
