@@ -135,7 +135,8 @@ In this step you can also opt to let the marketplace create the cluster for you.
 ```shell
 # this creates a very bare-minimum cluster with all defaults
 gcloud container clusters create cortex \
-    --workload-pool=$PROJECT_ID.svc.id.goog
+    --workload-pool=$PROJECT_ID.svc.id.goog \
+    --machine-type=e2-standard-4
 ```
 
 If you already have a cluster [update it to enable Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#enable-existing-cluster) pool.
